@@ -37,6 +37,7 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
+    '''Save df dataFrame into a sqlite db file specified by database_filename'''
     engine = create_engine('sqlite:///' + database_filename)
     df.to_sql('Disaster', engine, index=False)
 
